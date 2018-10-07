@@ -1,0 +1,49 @@
+﻿<Window x:Class="IikoPaymentPlugin.View.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:userControl="clr-namespace:IikoPaymentPlugin.View.UserControls"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IikoPaymentPlugin.View"
+        mc:Ignorable="d"
+        Title="ClientWindow" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FF727378">
+            <TextBlock Text="ТЕКУЩИЙ КЛИЕНТ" Foreground="White"
+                       FontWeight="Bold" FontSize="15"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <userControl:ClientInfoCell x:Name="fullNameCell" Grid.Row="1"
+                                    Header="ФИО" InfoText="Иванов Иван"
+                                    BorderThickness="0 0 0 1" BorderBrush="Black"/>
+
+        <userControl:ClientInfoCell x:Name="balanceCell" Grid.Row="2"
+                                    Header="Баланс" InfoText="702"
+                                    BorderThickness="0 0 0 1" BorderBrush="Black"/>
+
+        <userControl:ClientInfoCell x:Name="percentCell" Grid.Row="3" Header="Кэшбэк"
+                                    InfoText="10%" BorderThickness="0"/>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Сменить клиента" FontSize="15"
+                    Click="Cancel_Click"
+                    BorderThickness="0"
+                    Margin="5"/>
+            <Button Content="ОК" Grid.Column="1" FontSize="15"
+                    Click="OK_Click"
+                    BorderThickness="0"
+                    Margin="5"/>
+        </Grid>
+    </Grid>
+</Window>

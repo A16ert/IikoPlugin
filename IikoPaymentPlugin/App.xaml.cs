@@ -13,5 +13,10 @@ namespace IikoPaymentPlugin
     /// </summary>
     public partial class App : Application
     {
+        PaymentPlugin paymentPlagin;
+        public App()
+        {
+            paymentPlagin = new PaymentPlugin();
+        }
     }
 }
